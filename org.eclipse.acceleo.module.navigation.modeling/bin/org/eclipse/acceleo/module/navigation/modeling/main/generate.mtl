@@ -1,0 +1,40 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://www.lpdql.org/navigationModeling')]
+
+
+[**
+ * The documentation of the template generateElement.
+ * @param aCarte
+ */]
+[template public generateElement(aCarte : Carte)]
+[comment @main/]
+[file ('generator/' + aCarte.nom + '.java', false, 'UTF-8')]
+
+import java.util.*;
+	
+public class [aCarte.nom/] {
+	private ArrayList<Route> routes = 
+		new ArrayList<Route>([aCarte.routes/]);
+
+	private ArrayList<Ville> villes = 
+		new ArrayList<Ville>([aCarte.villes/]);
+
+	private IParcours parcours = new ParcoursRapide(); // Default
+
+	public void demanderParcours(Ville depart, Ville arrivee) {
+		parcours.setVilleDepart(depart);
+		parcours.setVilleArrivee(arrivee);
+		parcours.calculParcours();
+		afficherParcours();
+	}
+
+	public void afficherParcours() {
+		System.out.println(parcours);
+	} 
+
+}
+[/file]
+[/template]

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="modeling" version="12.0.0.2017041100">
+  <ownedViewpoints name="MyViewpoint" modelFileExtension="navigationModeling">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" domainClass="NavigationModeling::Carte" enablePopupBars="true">
+      <defaultLayer name="Default">
+        <nodeMappings name="VPCarte" domainClass="navigationModeling::Carte">
+          <style xsi:type="style:BundledImageDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="VPRoute" domainClass="navigationModeling::Route">
+          <style xsi:type="style:BundledImageDescription" labelSize="12" labelPosition="node" resizeKind="NSEW" shape="stroke">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="VPVille" domainClass="navigationModeling::Ville">
+          <style xsi:type="style:BundledImageDescription" labelSize="12" labelPosition="node" resizeKind="NSEW" shape="ring">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CVPCarte" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='']/@defaultLayer/@nodeMappings[name='VPCarte']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="navigationModeling::Carte" referenceName="Carte">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="Nom"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CVPRoute" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='']/@defaultLayer/@nodeMappings[name='VPRoute']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="navigationModeling::Route" referenceName="Route">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="Duree"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="Distance"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CVPVille" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='']/@defaultLayer/@nodeMappings[name='VPVille']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="navigationModeling::Ville" referenceName="Ville">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="Nom"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="navigation.modeling.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

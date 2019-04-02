@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated navigationModeling -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="navigationModeling.presentation.NavigationModelingModelWizardID"
+            name="%_UI_NavigationModelingModelWizard_label"
+            class="navigationModeling.presentation.NavigationModelingModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/NavigationModelingModelFile.gif">
+         <description>%_UI_NavigationModelingModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated navigationModeling -->
+      <editor
+            id="navigationModeling.presentation.NavigationModelingEditorID"
+            name="%_UI_NavigationModelingEditor_label"
+            icon="icons/full/obj16/NavigationModelingModelFile.gif"
+            extensions="navigationmodeling"
+            class="navigationModeling.presentation.NavigationModelingEditor"
+            contributorClass="navigationModeling.presentation.NavigationModelingActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
